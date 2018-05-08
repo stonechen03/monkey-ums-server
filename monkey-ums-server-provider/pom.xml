@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.monkeyframework.ums</groupId>
+		<artifactId>monkey-ums-server</artifactId>
+		<version>0.1.0.RELEASE</version>
+	</parent>
+	<artifactId>monkey-ums-server-provider</artifactId>
+	<name>monkey-ums-server-provider</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.monkeyframework.ums</groupId>
+			<artifactId>monkey-ums-server-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.monkeyframework</groupId>
+			<artifactId>monkey-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.monkeyframework</groupId>
+			<artifactId>monkey-distributed</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.monkeyframework.orm</groupId>
+			<artifactId>monkey-orm-mybatis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.monkeyframework.config</groupId>
+			<artifactId>monkey-config-diamond</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.monkeyframework.boot</groupId>
+			<artifactId>monkey-boot-spring</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
+	</dependencies>
+</project>

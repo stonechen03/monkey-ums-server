@@ -1,0 +1,440 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.monkeyframework.ums</groupId>
+	<artifactId>monkey-ums-server</artifactId>
+	<version>0.1.0.RELEASE</version>
+	<packaging>pom</packaging>
+
+	<name>monkey-ums-server</name>
+	<url>http://mvnrepo.monkeyframework.com</url>
+
+	<properties>
+		<spring.version>4.2.0.RELEASE</spring.version>
+		<monkey.version>0.1.6.RELEASE</monkey.version>
+		<orm.version>0.1.4.RELEASE</orm.version>
+		<jms.version>0.1.4.RELEASE</jms.version>
+		<cache.version>0.3.3.RELEASE</cache.version>
+		<qos.version>0.0.6.RELEASE</qos.version>
+		<rest.version>1.1.1.RELEASE</rest.version>
+		<config.version>0.2.5.RELEASE</config.version>
+		<boot.version>0.3.2.RELEASE</boot.version>
+		<fileupload.version>1.2.1</fileupload.version>
+		<aspectj.version>1.6.8</aspectj.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- monkey -->
+			<dependency>
+				<groupId>com.monkeyframework</groupId>
+				<artifactId>monkey-core</artifactId>
+				<version>${monkey.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.monkeyframework</groupId>
+				<artifactId>monkey-distributed</artifactId>
+				<version>${monkey.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.monkeyframework</groupId>
+				<artifactId>monkey-web</artifactId>
+				<version>${monkey.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.monkeyframework</groupId>
+				<artifactId>monkey-model</artifactId>
+				<version>${monkey.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.monkeyframework</groupId>
+				<artifactId>monkey-exception</artifactId>
+				<version>${monkey.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.monkeyframework.rest</groupId>
+				<artifactId>monkey-rest</artifactId>
+				<version>${rest.version}</version>
+			</dependency>
+			
+			<!-- config -->
+			<dependency>
+				<groupId>com.monkeyframework.config</groupId>
+				<artifactId>monkey-config-diamond</artifactId>
+				<version>${config.version}</version>
+			</dependency>
+			
+			<!-- boot -->
+			<dependency>
+				<groupId>com.monkeyframework.boot</groupId>
+				<artifactId>monkey-boot-spring</artifactId>
+				<version>${boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.monkeyframework.boot</groupId>
+				<artifactId>monkey-boot-jetty8</artifactId>
+				<version>${boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.monkeyframework.boot</groupId>
+				<artifactId>monkey-boot-tomcat8</artifactId>
+				<version>${boot.version}</version>
+			</dependency>
+
+			<!-- orm -->
+			<dependency>
+		  		<groupId>com.monkeyframework.orm</groupId>
+		  		<artifactId>monkey-orm-hibernate</artifactId>
+		  		<version>${orm.version}</version>
+			</dependency>
+			<dependency>
+		  		<groupId>com.monkeyframework.orm</groupId>
+		  		<artifactId>monkey-orm-mybatis</artifactId>
+		  		<version>${orm.version}</version>
+			</dependency>
+			
+			<!-- jms -->
+			<dependency>
+		  		<groupId>com.monkeyframework.jms</groupId>
+		  		<artifactId>monkey-jms-core</artifactId>
+		  		<version>${jms.version}</version>
+			</dependency>
+			<dependency>
+		  		<groupId>com.monkeyframework.jms</groupId>
+		  		<artifactId>monkey-jms-kafka</artifactId>
+		  		<version>${jms.version}</version>
+			</dependency>
+			<dependency>
+		  		<groupId>com.monkeyframework.jms</groupId>
+		  		<artifactId>monkey-jms-activemq</artifactId>
+		  		<version>${jms.version}</version>
+			</dependency>
+			<dependency>
+		  		<groupId>com.monkeyframework.jms</groupId>
+		  		<artifactId>monkey-jms-rocketmq</artifactId>
+		  		<version>${jms.version}</version>
+			</dependency>
+						
+			<!-- cache -->
+			<dependency>
+				<groupId>com.monkeyframework.cache</groupId>
+				<artifactId>monkey-cache-hazelcast</artifactId>
+				<version>${cache.version}</version>
+			</dependency>
+			<dependency>
+			  	<groupId>com.monkeyframework.cache</groupId>
+			  	<artifactId>monkey-cache-memcache</artifactId>
+			  	<version>${cache.version}</version>
+			</dependency>
+			<dependency>
+			  	<groupId>com.monkeyframework.cache</groupId>
+			  	<artifactId>monkey-cache-redis</artifactId>
+			  	<version>${cache.version}</version>
+			</dependency>
+			
+			<!-- qos -->
+			<dependency>
+			  	<groupId>com.monkeyframework.qos</groupId>
+			  	<artifactId>monkey-qos-collector-spring</artifactId>
+			  	<version>${qos.version}</version>
+			</dependency>
+			<dependency>
+			  	<groupId>com.monkeyframework.qos</groupId>
+			  	<artifactId>monkey-qos-collector-dubbo</artifactId>
+			  	<version>${qos.version}</version>
+			</dependency>
+			<dependency>
+			  	<groupId>com.monkeyframework.qos</groupId>
+			  	<artifactId>monkey-qos-collector-core</artifactId>
+			  	<version>${qos.version}</version>
+			</dependency>
+			
+			<!-- logs -->
+			<dependency>
+				<groupId>com.monkeyframework.logs</groupId>
+  				<artifactId>monkey-logs-api-log4j</artifactId>
+  				<version>${logs.version}</version>
+			</dependency>
+			
+			<!-- util -->
+			<dependency>
+				<groupId>com.monkeyframework.util</groupId>
+				<artifactId>monkey-util-ip</artifactId>
+				<version>0.0.2.RELEASE</version>
+			</dependency>
+			
+			<!-- spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+  				<artifactId>spring-test</artifactId>
+  				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- bean工具类 -->
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.7.0</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.ezmorph</groupId>
+				<artifactId>ezmorph</artifactId>
+				<version>1.0.6</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			
+			<!-- spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jms</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-asm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.4.3</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>2.8</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.8.1</version>
+					<configuration>
+						<argLine>-Xmx256M</argLine>
+						<includes>
+							<include>**/*Test.java</include>
+						</includes>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.0-beta-3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.1.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.4.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.8</version>
+					<configuration>
+						<quiet>true</quiet>
+						<docencoding>UTF-8</docencoding>
+						<charset>UTF-8</charset>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-archetype-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>jar</goal>
+								<goal>test-jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>test-jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.3.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.2.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.8</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Local Nexus Releases Repository</name>
+			<url>http://nexus.monkeyframework.com:8081/nexus/content/repositories/releases</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Local Nexus Snapshots Repository</name>
+			<url>http://nexus.monkeyframework.com:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<modules>
+		<module>monkey-ums-server-core</module>
+		<module>monkey-ums-server-collector</module>
+		<module>monkey-ums-server-storage</module>
+		<module>monkey-ums-server-provider</module>
+	</modules>
+</project>

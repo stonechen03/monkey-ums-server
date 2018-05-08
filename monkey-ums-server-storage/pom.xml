@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.monkeyframework.ums</groupId>
+		<artifactId>monkey-ums-server</artifactId>
+		<version>0.1.0.RELEASE</version>
+	</parent>
+	<artifactId>monkey-ums-server-storage</artifactId>
+	<name>monkey-ums-server-storage</name>
+	<url>http://maven.apache.org</url>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>monkey-ums-server-storage-db</module>
+		<module>monkey-ums-server-storage-hdfs</module>
+    	<module>monkey-ums-server-storage-hive</module>
+	</modules>
+	
+</project>

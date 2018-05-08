@@ -1,0 +1,16 @@
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+/target/
+*/target/
+*/*/target/
+.settings
+.project
+*/.settings
+*/.project
+*.classpath
+*.log
+*/src/main/resources/*.properties
+*/*/.cache*
